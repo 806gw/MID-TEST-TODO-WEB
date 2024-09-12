@@ -1,20 +1,25 @@
 import { useRef, useState } from "react";
-import "./TestEditor.css";
+import "./TodoEditor.css";
 
-const TestEditor = ({ onCreate }) => {
+const TodoEditor = ({ onCreate }) => {
   const [content, setContent] = useState("");
+  const [date, setDate] = useState("2024-10-16");
   const inputRef = useRef();
 
   const onChangeContent = (e) => {
     setContent(e.target.value);
   };
 
+  const onChangeDate = (e) => {
+    setDate(e.target.value);
+  };
+
   const onSubmit = () => {
-    if (!content) {
+    if (!content || !date) {
       inputRef.current.focus();
       return;
     }
-    onCreate(content);
+    onCreate(content, date);
     setContent("");
   };
 
@@ -26,12 +31,16 @@ const TestEditor = ({ onCreate }) => {
 
   return (
     <div className="TodoEditor">
-      <h4>새로운 Todo 작성하기</h4>
+      <h4>중간고사 과목 리스트 작성하기</h4>
+      <select value={date} onChange={onChangeDate}>
+        <option value="2024-10-16">10월 16일</option>
+        <option value="2024-10-17">10월 17일</option>
+      </select>
       <div className="editor_wrapper">
         <input
           type="text"
           ref={inputRef}
-          placeholder="새로운 Todo .."
+          placeholder="중간고사 과목 적기 ex) 국어, 통합사회"
           value={content}
           onChange={onChangeContent}
           onKeyDown={onKeyDown}
@@ -43,4 +52,5 @@ const TestEditor = ({ onCreate }) => {
     </div>
   );
 };
-export default TestEditor;
+
+export default TodoEditor;

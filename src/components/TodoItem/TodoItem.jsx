@@ -1,7 +1,7 @@
-import { memo } from "react";
-import "./TestItem.css";
+import React from "react";
+import "./TodoItem.css";
 
-function TestItem({ id, content, createdDate, isDone, onUpdate, onDelete }) {
+function TodoItem({ id, content, createdDate, isDone, onUpdate, onDelete }) {
   console.log(`${id} render!`);
   const onChaangeCheckbox = () => {
     onUpdate(id);
@@ -16,7 +16,7 @@ function TestItem({ id, content, createdDate, isDone, onUpdate, onDelete }) {
       <div className="checkbox_col">
         <input onChange={onChaangeCheckbox} checked={isDone} type="checkbox" />
       </div>
-      <div className="title_col">{content}</div>
+      <div className={`title_col ${isDone ? "done" : ""}`}>{content}</div>
       <div className="date_col">
         {new Date(createdDate).toLocaleDateString()}
       </div>
@@ -27,4 +27,4 @@ function TestItem({ id, content, createdDate, isDone, onUpdate, onDelete }) {
   );
 }
 
-export default memo(TestItem);
+export default React.memo(TodoItem);

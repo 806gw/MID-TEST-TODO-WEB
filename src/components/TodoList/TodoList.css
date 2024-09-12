@@ -9,10 +9,14 @@
     padding-bottom: 15px;
 }
 
+.searchbar {
+    margin-top: 20px;
+}
+
 /* 검색 폼을 클릭했을 때의 스타일 적용 */
 .TodoList .searchbar:focus {
     outline: none;
-    border-bottom: 1px solid #1f93ff;
+    border-bottom: 1px solid #ff1f62;
 }
 
 .TodoList .list_wrapper {

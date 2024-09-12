@@ -4,6 +4,10 @@
     gap: 10px;
 }
 
+.editor_wrapper {
+    margin-top: 10px;
+}
+
 .TodoEditor input {
     flex: 1;
     box-sizing: border-box;
@@ -12,24 +16,30 @@
     padding: 15px;
 }
 
+select {
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+}
+
 input {
     transition: ease-in border 0.15s;
 }
 
 input:hover {
-    border: 1px solid #1f93ff;
+    border: 1px solid #ff1f62;
 }
 
 .TodoEditor input:focus {
     outline: none;
-    border: 1px solid #1f93ff;
+    border: 1px solid #ff1f62;
 }
 
 .TodoEditor button {
     cursor: pointer;
     width: 80px;
     border: none;
-    background-color: #1f93ff;
+    background-color: #ff1f62;
     color: white;
     border-radius: 5px;
 }
@@ -39,5 +49,5 @@ input:hover {
 }
 
 .addBtn:hover {
-    background-color: #1d89ee;
+    background-color: #e71a58;
 }

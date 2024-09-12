@@ -1,8 +1,8 @@
-import "./TestList.css";
-import TodoItem from "../TestItem/TestItem";
+import "./TodoList.css";
+import TodoItem from "../TodoItem/TodoItem";
 import { useMemo, useState } from "react";
 
-const TestList = ({ todo, onUpdate, onDelete }) => {
+const TodoList = ({ todo, onUpdate, onDelete }) => {
   const [search, setSearch] = useState("");
   const onChangeSearch = (e) => {
     setSearch(e.target.value);
@@ -30,13 +30,14 @@ const TestList = ({ todo, onUpdate, onDelete }) => {
   }, [todo]);
 
   const { totalCount, doneCount, notDoneCount } = analyzeTodo;
+
   return (
     <div className="TodoList">
-      <h4>Todo List 🔍</h4>
+      <h4>중간고사 과목 리스트 📋</h4>
       <div>
-        <div>총개수: {totalCount}</div>
-        <div>완료된 일: {doneCount}</div>
-        <div>미완료된 일: {notDoneCount}</div>
+        <div>총과목 개수: {totalCount}</div>
+        <div>완료된 과목: {doneCount}</div>
+        <div>미완료된 과목: {notDoneCount}</div>
       </div>
       <input
         type="text"
@@ -58,4 +59,5 @@ const TestList = ({ todo, onUpdate, onDelete }) => {
     </div>
   );
 };
-export default TestList;
+
+export default TodoList;
