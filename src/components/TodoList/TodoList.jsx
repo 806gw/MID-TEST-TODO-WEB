@@ -33,7 +33,7 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
 
   return (
     <div className="TodoList">
-      <h4>Mid-Term Exam List</h4>
+      <h4>중간고사 과목 리스트 📋</h4>
       <div>
         <div>총과목 개수: {totalCount}</div>
         <div>완료된 과목: {doneCount}</div>

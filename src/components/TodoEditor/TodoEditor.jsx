@@ -1,15 +1,10 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import "./TodoEditor.css";
 
-const TodoEditor = ({ onCreate, onDateChange }) => {
+const TodoEditor = ({ onCreate }) => {
   const [content, setContent] = useState("");
-  const [date, setDate] = useState("10월 16일");
-
+  const [date, setDate] = useState("2024-10-16");
   const inputRef = useRef();
-
-  useEffect(() => {
-    onDateChange(date);
-  }, [date, onDateChange]);
 
   const onChangeContent = (e) => {
     setContent(e.target.value);
@@ -20,11 +15,11 @@ const TodoEditor = ({ onCreate, onDateChange }) => {
   };
 
   const onSubmit = () => {
-    if (!content) {
+    if (!content || !date) {
       inputRef.current.focus();
       return;
     }
-    onCreate(date, content);
+    onCreate(content, date);
     setContent("");
   };
 
@@ -38,8 +33,8 @@ const TodoEditor = ({ onCreate, onDateChange }) => {
     <div className="TodoEditor">
       <h4>중간고사 과목 리스트 작성하기</h4>
       <select value={date} onChange={onChangeDate}>
-        <option value="10월 16일">10월 16일</option>
-        <option value="10월 17일">10월 17일</option>
+        <option value="2024-10-16">10월 16일</option>
+        <option value="2024-10-17">10월 17일</option>
       </select>
       <div className="editor_wrapper">
         <input
