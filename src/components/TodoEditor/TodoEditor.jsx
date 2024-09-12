@@ -8,7 +8,7 @@ const TodoEditor = ({ onCreate, onDateChange }) => {
   const inputRef = useRef();
 
   useEffect(() => {
-    onDateChange(date); // 날짜 변경 시 상위 컴포넌트에 알려줍니다.
+    onDateChange(date);
   }, [date, onDateChange]);
 
   const onChangeContent = (e) => {
@@ -36,7 +36,7 @@ const TodoEditor = ({ onCreate, onDateChange }) => {
 
   return (
     <div className="TodoEditor">
-      <h4>새로운 Todo 작성하기</h4>
+      <h4>중간고사 과목 리스트 작성하기</h4>
       <select value={date} onChange={onChangeDate}>
         <option value="10월 16일">10월 16일</option>
         <option value="10월 17일">10월 17일</option>

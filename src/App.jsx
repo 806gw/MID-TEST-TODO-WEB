@@ -42,7 +42,7 @@ function reducer(state, action) {
 function App() {
   const [todo, dispatch] = useReducer(reducer, initialState);
   const [selectedDate, setSelectedDate] = useState("10월 16일");
-  const idRef = useRef(3);
+  const idRef = useRef(0);
 
   const onCreate = (date, content) => {
     dispatch({
